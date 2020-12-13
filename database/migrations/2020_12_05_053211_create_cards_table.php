@@ -13,11 +13,11 @@ class CreateCardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cards', function (Blueprint $card) {
-            $card->id();
-            $card->foreignId('id_product')->constrained('products');
-            $card->foreignId('id_user')->constrained('users');
-            $card->timestamps();
+        Schema::create('cards', function (Blueprint $table) {
+            $table->id();
+            $table->integer('id_products')->unsigned();
+            $table->integer('id_users')->unsigned();
+            $table->timestamps();
         });
     }
 
